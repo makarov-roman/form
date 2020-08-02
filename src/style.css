@@ -9,7 +9,7 @@ body {
 }
 
 :global(.root) {
-    min-width: 540px;
+    width: 540px;
     min-height: 300px;
 }
 
