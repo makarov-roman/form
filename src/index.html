@@ -25,7 +25,7 @@
     }
   })
   emailsInput.addControlItem({
-    title: 'Count',
+    title: 'Get Emails Count',
     onClick: () => {
       const count = emailsInput.entities.reduce((count, entity) => {
         if (entity.completed && entity.valid) return count + 1
