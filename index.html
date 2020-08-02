@@ -1,0 +1,5 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>parcel app</title><link rel="stylesheet" href="style.50b86c06.css"><script src="style.50b86c06.js"></script><link rel="stylesheet" href="emailsInput.50b86c06.css"></head><body>
+<div id="js-main" class="root"> </div>
+<script src="emailsInput.27c50244.js"></script>
+<script>var t=document.querySelector("#js-main"),n=new EmailsInput(t);function e(){return Math.random().toString(36).replace(/[^a-z]+/g,"").substr(0,5)}n.addControlItem({title:"Add Email",onClick:function(){n.addEmail("".concat(e(),"@").concat(e(),".").concat(e()))}}),n.addControlItem({title:"Count",onClick:function(){var t=n.entities.reduce(function(t,n){return n.completed&&n.valid?t+1:t},0);alert("Number of complete valid emails is ".concat(t))}});</script>
+</body></html>
