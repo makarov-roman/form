@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>parcel app</title>
+    <link rel="stylesheet" href="./style.css"/>
+</head>
+<body>
+<div id="js-main" class="root">
+
+</div>
+<script src="./emailsInput.ts"></script>
+<script>
+  var inputContainerNode = document.querySelector('#js-main');
+  var emailsInput = new EmailsInput(inputContainerNode);
+
+  function generateString() {
+    return Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5)
+  }
+  emailsInput.addControlItem({
+    title: 'Add Email',
+    onClick: () => {
+      emailsInput.addEmail(`${generateString()}@${generateString()}.${generateString()}`)
+    }
+  })
+  emailsInput.addControlItem({
+    title: 'Count',
+    onClick: () => {
+      const count = emailsInput.entities.reduce((count, entity) => {
+        if (entity.completed && entity.valid) return count + 1
+        return count
+      }, 0)
+      alert(`Number of complete valid emails is ${count}`)
+    }
+  })
+</script>
+</body>
+</html>
