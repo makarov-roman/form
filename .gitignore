@@ -75,3 +75,4 @@ fabric.properties
 #JS
 node_modules
 .cache
+dist
