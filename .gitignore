@@ -74,5 +74,4 @@ fabric.properties
 
 #JS
 node_modules
-dist
 .cache
