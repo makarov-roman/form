@@ -81,7 +81,7 @@ body {
     border: 1px solid #C3C2CF;
     box-sizing: border-box;
     border-radius: 4px;
-    margin: 24px 0;
+    margin-top: 24px;
     padding: 4px;
     display: flex;
     justify-items: flex-start;
