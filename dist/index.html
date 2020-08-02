@@ -1,5 +1,38 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>parcel app</title><link rel="stylesheet" href="style.a652cb52.css"><script src="style.a652cb52.js"></script><link rel="stylesheet" href="emailsInput.a652cb52.css"></head><body>
-<div id="js-main" class="root"> </div>
-<script src="emailsInput.d64b3d16.js"></script>
-<script>var t=document.querySelector("#js-main"),n=new EmailsInput(t);function e(){return Math.random().toString(36).replace(/[^a-z]+/g,"").substr(0,5)}n.addControlItem({title:"Add Email",onClick:function(){n.addEmail("".concat(e(),"@").concat(e(),".").concat(e()))}}),n.addControlItem({title:"Count",onClick:function(){var t=n.entities.reduce(function(t,n){return n.completed&&n.valid?t+1:t},0);alert("Number of complete valid emails is ".concat(t))}});</script>
-</body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>parcel app</title>
+    <link rel="stylesheet" href="/style.e308ff8e.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" class="href">
+<script src="/style.e308ff8e.js"></script><link rel="stylesheet" href="/emailsInput.4f6b2671.css"></head>
+<body>
+<div id="js-main" class="root">
+
+</div>
+<script src="/emailsInput.4f6b2671.js"></script>
+<script>var inputContainerNode = document.querySelector('#js-main');
+var emailsInput = new EmailsInput(inputContainerNode);
+
+function generateString() {
+  return Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5);
+}
+
+emailsInput.addControlItem({
+  title: 'Add Email',
+  onClick: function onClick() {
+    emailsInput.addEmail("".concat(generateString(), "@").concat(generateString(), ".").concat(generateString()));
+  }
+});
+emailsInput.addControlItem({
+  title: 'Count',
+  onClick: function onClick() {
+    var count = emailsInput.entities.reduce(function (count, entity) {
+      if (entity.completed && entity.valid) return count + 1;
+      return count;
+    }, 0);
+    alert("Number of complete valid emails is ".concat(count));
+  }
+});</script>
+</body>
+</html>
